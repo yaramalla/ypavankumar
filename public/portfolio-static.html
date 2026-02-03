@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pavan Kumar Reddy | Senior Software Engineer</title>
+  <meta name="description" content="Senior Software Engineer specializing in Microsoft .NET Technologies. Expert in C#, ASP.NET, Web API, and enterprise application development.">
+  <meta name="author" content="Pavan Kumar Reddy">
+  <meta name="keywords" content="Pavan Kumar Reddy, Software Engineer, .NET Developer, C#, ASP.NET, Hyderabad">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --background: hsl(222, 47%, 6%);
+      --foreground: hsl(210, 40%, 96%);
+      --card: hsl(222, 47%, 8%);
+      --card-foreground: hsl(210, 40%, 96%);
+      --primary: hsl(174, 72%, 56%);
+      --primary-foreground: hsl(222, 47%, 6%);
+      --secondary: hsl(222, 30%, 14%);
+      --secondary-foreground: hsl(210, 40%, 96%);
+      --muted: hsl(222, 30%, 18%);
+      --muted-foreground: hsl(215, 20%, 55%);
+      --border: hsl(222, 30%, 18%);
+      --gradient-primary: linear-gradient(135deg, hsl(174, 72%, 56%), hsl(199, 89%, 48%));
+      --gradient-hero: radial-gradient(ellipse at 50% 0%, hsl(222, 47%, 15%) 0%, hsl(222, 47%, 6%) 70%);
+      --glow-primary: 0 0 60px hsla(174, 72%, 56%, 0.15);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background-color: var(--background);
+      color: var(--foreground);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .font-heading {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .text-gradient {
+      background: var(--gradient-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass-card {
+      background: hsla(222, 47%, 8%, 0.6);
+      backdrop-filter: blur(24px);
+      border: 1px solid hsla(222, 30%, 18%, 0.5);
+      border-radius: 1rem;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 50;
+      padding: 1.5rem 0;
+      transition: all 0.5s ease;
+    }
+
+    .nav.scrolled {
+      background: hsla(222, 47%, 8%, 0.6);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid hsla(222, 30%, 18%, 0.5);
+      padding: 1rem 0;
+    }
+
+    .nav-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+      text-decoration: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted-foreground);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--foreground);
+      cursor: pointer;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .mobile-menu-btn { display: block; }
+      .nav-links.open {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 100%;
+        left: 1rem;
+        right: 1rem;
+        background: hsla(222, 47%, 8%, 0.95);
+        backdrop-filter: blur(24px);
+        border: 1px solid hsla(222, 30%, 18%, 0.5);
+        border-radius: 0.75rem;
+        padding: 1rem;
+        gap: 0;
+      }
+      .nav-links.open a {
+        display: block;
+        padding: 0.75rem 1rem;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-hero);
+    }
+
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(60px);
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+
+    .hero-orb-1 {
+      top: 25%;
+      left: 25%;
+      width: 24rem;
+      height: 24rem;
+      background: hsla(174, 72%, 56%, 0.1);
+    }
+
+    .hero-orb-2 {
+      bottom: 25%;
+      right: 25%;
+      width: 20rem;
+      height: 20rem;
+      background: hsla(174, 72%, 56%, 0.1);
+      animation-delay: 1.5s;
+    }
+
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 0.8; }
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) scale(1.2); }
+      50% { transform: translateY(-20px) scale(1.2); }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+    }
+
+    .profile-wrapper {
+      position: relative;
+      display: inline-block;
+      margin-bottom: 2rem;
+    }
+
+    .profile-img-container {
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid hsla(174, 72%, 56%, 0.3);
+      padding: 0.25rem;
+      box-shadow: var(--glow-primary);
+    }
+
+    .profile-img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .profile-ring {
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      border: 1px solid hsla(174, 72%, 56%, 0.2);
+      transform: scale(1.2);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .hero h1 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 { font-size: 4rem; }
+      .profile-img-container { width: 12rem; height: 12rem; }
+    }
+
+    .hero-subtitle {
+      font-size: 1.25rem;
+      color: var(--muted-foreground);
+      font-weight: 500;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero-tech {
+      color: var(--primary);
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      margin-top: 1.5rem;
+    }
+
+    .social-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .social-icon:hover {
+      color: var(--primary);
+      background: hsla(174, 72%, 56%, 0.1);
+    }
+
+    .social-icon svg {
+      width: 20px;
+      height: 20px;
+    }
+
+    .scroll-indicator {
+      position: absolute;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .scroll-mouse {
+      width: 1.5rem;
+      height: 2.5rem;
+      border: 2px solid hsla(215, 20%, 55%, 0.3);
+      border-radius: 9999px;
+      display: flex;
+      justify-content: center;
+      padding-top: 0.5rem;
+    }
+
+    .scroll-dot {
+      width: 0.375rem;
+      height: 0.375rem;
+      border-radius: 50%;
+      background: var(--primary);
+      animation: scroll-bounce 1.5s infinite;
+    }
+
+    @keyframes scroll-bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(8px); }
+    }
+
+    /* Sections */
+    section {
+      padding: 6rem 0;
+    }
+
+    .section-heading {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    @media (min-width: 768px) {
+      .section-heading { font-size: 2.5rem; }
+    }
+
+    /* About Section */
+    .about-content {
+      max-width: 56rem;
+      margin: 0 auto;
+    }
+
+    .about-text {
+      font-size: 1.125rem;
+      color: var(--muted-foreground);
+      text-align: center;
+      margin-bottom: 3rem;
+      line-height: 1.8;
+    }
+
+    .about-text .highlight {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .contact-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .contact-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .contact-card {
+      padding: 1.25rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: border-color 0.3s;
+    }
+
+    .contact-card:hover {
+      border-color: hsla(174, 72%, 56%, 0.5);
+    }
+
+    .contact-icon {
+      width: 3rem;
+      height: 3rem;
+      border-radius: 0.5rem;
+      background: hsla(174, 72%, 56%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 0.75rem;
+      color: var(--primary);
+    }
+
+    .contact-label {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-value {
+      font-size: 0.875rem;
+      font-weight: 500;
+    }
+
+    /* Skills Section */
+    .skills-section {
+      position: relative;
+    }
+
+    .skills-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, transparent, hsla(222, 30%, 14%, 0.2), transparent);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      position: relative;
+    }
+
+    @media (min-width: 768px) {
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (min-width: 1024px) {
+      .skills-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    .skill-card {
+      padding: 1.5rem;
+      transition: border-color 0.3s;
+    }
+
+    .skill-card:hover {
+      border-color: hsla(174, 72%, 56%, 0.3);
+    }
+
+    .skill-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .skill-icon {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 0.5rem;
+      background: hsla(174, 72%, 56%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .skill-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      font-size: 1.125rem;
+    }
+
+    .skill-item {
+      margin-bottom: 1rem;
+    }
+
+    .skill-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .skill-name {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-name span:first-child {
+      color: var(--muted-foreground);
+    }
+
+    .skill-name span:last-child {
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .skill-bar {
+      height: 0.5rem;
+      background: var(--muted);
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .skill-bar-fill {
+      height: 100%;
+      background: var(--gradient-primary);
+      border-radius: 9999px;
+      transition: width 1s ease-out;
+    }
+
+    /* Experience Section */
+    .experience-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 3rem;
+    }
+
+    @media (min-width: 1024px) {
+      .experience-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    .timeline-section h3 {
+      font-family: 'Space Grotesk', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .timeline-icon {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 0.5rem;
+      background: hsla(174, 72%, 56%, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--primary);
+    }
+
+    .timeline {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), transparent);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-bottom: 2rem;
+    }
+
+    .timeline-item:last-child {
+      padding-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: -1.5rem;
+      top: 0.25rem;
+      width: 0.75rem;
+      height: 0.75rem;
+      border-radius: 50%;
+      background: var(--primary);
+      transform: translateX(-50%);
+      box-shadow: 0 0 0 4px var(--background);
+    }
+
+    .timeline-content {
+      padding: 1rem;
+      border-radius: 0.75rem;
+    }
+
+    .timeline-title {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-company {
+      color: var(--primary);
+      font-size: 0.875rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .timeline-date {
+      font-size: 0.75rem;
+      color: var(--muted-foreground);
+    }
+
+    .timeline-description {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+      margin-top: 0.5rem;
+    }
+
+    /* Contact Section */
+    .contact-section {
+      position: relative;
+    }
+
+    .contact-section .contact-bg {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, transparent, hsla(222, 30%, 14%, 0.2), transparent);
+    }
+
+    .contact-box {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .contact-box p {
+      color: var(--muted-foreground);
+      margin-bottom: 2rem;
+    }
+
+    .contact-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      font-weight: 500;
+      text-decoration: none;
+      transition: all 0.3s;
+    }
+
+    .btn-primary {
+      background: var(--gradient-primary);
+      color: var(--primary-foreground);
+    }
+
+    .btn-primary:hover {
+      opacity: 0.9;
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: var(--secondary);
+      color: var(--foreground);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Footer */
+    footer {
+      padding: 2rem 0;
+      border-top: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .footer-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .footer-content {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
+
+    .footer-logo {
+      font-family: 'Space Grotesk', sans-serif;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    .footer-text {
+      font-size: 0.875rem;
+      color: var(--muted-foreground);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 0.75rem;
+    }
+
+    .footer-social a {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      background: var(--secondary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--muted-foreground);
+      transition: all 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: var(--primary);
+      background: hsla(174, 72%, 56%, 0.1);
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <header class="nav" id="nav">
+    <nav class="container nav-content">
+      <a href="#" class="nav-logo text-gradient">PK</a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    
+    <div class="hero-content">
+      <div class="profile-wrapper">
+        <div class="profile-img-container">
+          <img src="https://filedn.com/lEUDIbChPl78BK9ap5mBi20/pkfolio/pavan.png" alt="Pavan Kumar" class="profile-img">
+        </div>
+        <div class="profile-ring"></div>
+      </div>
+      
+      <h1 class="font-heading">
+        <span>Pavan Kumar</span> <span class="text-gradient">Reddy</span>
+      </h1>
+      
+      <p class="hero-subtitle">Senior Software Engineer</p>
+      <p class="hero-tech">Microsoft .NET Technologies</p>
+      
+      <div class="social-links">
+        <a href="https://www.linkedin.com/in/ypavan-net/" target="_blank" rel="noopener" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/y.pavan.kr/" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/+919148283004" target="_blank" rel="noopener" class="social-icon" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+    
+    <div class="scroll-indicator">
+      <div class="scroll-mouse">
+        <div class="scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <div class="about-content">
+        <h2 class="section-heading font-heading">About <span class="text-gradient">Me</span></h2>
+        
+        <p class="about-text">
+          A highly skilled Software Engineer with deep expertise in designing, developing, and deploying 
+          multi-tiered web and Windows-based enterprise applications using Microsoft .NET technologies. 
+          Known for writing clean, scalable C# code and making significant contributions across all stages 
+          of the software development lifecycle, from initial planning to deployment. Proficient in delivering 
+          innovative, high-performance solutions tailored to clients in the
+          <span class="highlight">Warehouse Management (Supply Chain)</span>,
+          <span class="highlight">Healthcare</span>, and
+          <span class="highlight">Education</span> sectors.
+        </p>
+
+        <div class="contact-grid">
+          <div class="glass-card contact-card">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            </div>
+            <p class="contact-label">Location</p>
+            <p class="contact-value">Hyderabad, India</p>
+          </div>
+          
+          <a href="mailto:ypavan.net@gmail.com" class="glass-card contact-card">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            </div>
+            <p class="contact-label">Email</p>
+            <p class="contact-value">ypavan.net@gmail.com</p>
+          </a>
+          
+          <a href="tel:+919148283004" class="glass-card contact-card">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+            </div>
+            <p class="contact-label">Phone</p>
+            <p class="contact-value">+91-9148283004</p>
+          </a>
+          
+          <div class="glass-card contact-card">
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+            </div>
+            <p class="contact-label">Languages</p>
+            <p class="contact-value">English • Telugu • Tamil</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills-section">
+    <div class="skills-bg"></div>
+    <div class="container">
+      <h2 class="section-heading font-heading">Technical <span class="text-gradient">Skills</span></h2>
+      
+      <div class="skills-grid">
+        <!-- Programming -->
+        <div class="glass-card skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+            </div>
+            <h3 class="skill-title">Programming</h3>
+          </div>
+          <div class="skill-item"><div class="skill-name"><span>C#</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>SQL</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>JavaScript</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>TypeScript</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>LINQ</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>HTML/CSS</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+        </div>
+
+        <!-- Technologies -->
+        <div class="glass-card skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="8" rx="2" ry="2"></rect><rect x="2" y="14" width="20" height="8" rx="2" ry="2"></rect><line x1="6" y1="6" x2="6.01" y2="6"></line><line x1="6" y1="18" x2="6.01" y2="18"></line></svg>
+            </div>
+            <h3 class="skill-title">Technologies</h3>
+          </div>
+          <div class="skill-item"><div class="skill-name"><span>.NET Framework</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>.NET Core</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Web API/Services</span><span>80%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>ASP.NET MVC</span><span>80%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 80%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Entity Framework</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Windows Forms</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+        </div>
+
+        <!-- Tools -->
+        <div class="glass-card skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path></svg>
+            </div>
+            <h3 class="skill-title">Tools</h3>
+          </div>
+          <div class="skill-item"><div class="skill-name"><span>Visual Studio</span><span>100%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 100%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>VS Code</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>SQL Server</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>GitHub/TFS</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Postman</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Jira/Rally</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+        </div>
+
+        <!-- Operating Systems -->
+        <div class="glass-card skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+            </div>
+            <h3 class="skill-title">Operating Systems</h3>
+          </div>
+          <div class="skill-item"><div class="skill-name"><span>Windows</span><span>100%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 100%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Linux</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>macOS</span><span>50%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 50%"></div></div></div>
+        </div>
+
+        <!-- Domains -->
+        <div class="glass-card skill-card">
+          <div class="skill-header">
+            <div class="skill-icon">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+            </div>
+            <h3 class="skill-title">Domains</h3>
+          </div>
+          <div class="skill-item"><div class="skill-name"><span>Supply Chain Systems</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Warehouse Management</span><span>90%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 90%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Healthcare Systems</span><span>60%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 60%"></div></div></div>
+          <div class="skill-item"><div class="skill-name"><span>Education Systems</span><span>70%</span></div><div class="skill-bar"><div class="skill-bar-fill" style="width: 70%"></div></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience">
+    <div class="container">
+      <h2 class="section-heading font-heading">Experience & <span class="text-gradient">Education</span></h2>
+      
+      <div class="experience-grid">
+        <!-- Work Experience -->
+        <div class="timeline-section">
+          <h3>
+            <div class="timeline-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+            </div>
+            Work Experience
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-content">
+                <h4 class="timeline-title">Senior Software Engineer</h4>
+                <p class="timeline-company">Company Name</p>
+                <p class="timeline-date">2020 - Present</p>
+                <p class="timeline-description">Leading development of enterprise applications using .NET technologies.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-content">
+                <h4 class="timeline-title">Software Engineer</h4>
+                <p class="timeline-company">Company Name</p>
+                <p class="timeline-date">2017 - 2020</p>
+                <p class="timeline-description">Developed and maintained web applications and APIs.</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-content">
+                <h4 class="timeline-title">Junior Developer</h4>
+                <p class="timeline-company">Company Name</p>
+                <p class="timeline-date">2015 - 2017</p>
+                <p class="timeline-description">Started career working on Windows Forms applications.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Education -->
+        <div class="timeline-section">
+          <h3>
+            <div class="timeline-icon">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"></path><path d="M6 12v5c3 3 9 3 12 0v-5"></path></svg>
+            </div>
+            Education
+          </h3>
+          <div class="timeline">
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-content">
+                <h4 class="timeline-title">Master's Degree</h4>
+                <p class="timeline-company">University Name</p>
+                <p class="timeline-date">2013 - 2015</p>
+                <p class="timeline-description">Computer Science & Engineering</p>
+              </div>
+            </div>
+            <div class="timeline-item">
+              <div class="timeline-dot"></div>
+              <div class="glass-card timeline-content">
+                <h4 class="timeline-title">Bachelor's Degree</h4>
+                <p class="timeline-company">University Name</p>
+                <p class="timeline-date">2009 - 2013</p>
+                <p class="timeline-description">Computer Science & Engineering</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact-section">
+    <div class="contact-bg"></div>
+    <div class="container">
+      <h2 class="section-heading font-heading">Get In <span class="text-gradient">Touch</span></h2>
+      
+      <div class="glass-card contact-box">
+        <p>I'm always open to discussing new opportunities, interesting projects, or just having a chat about technology.</p>
+        
+        <div class="contact-buttons">
+          <a href="mailto:ypavan.net@gmail.com" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+            Send Email
+          </a>
+          <a href="https://www.linkedin.com/in/ypavan-net/" target="_blank" rel="noopener" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://wa.me/+919148283004" target="_blank" rel="noopener" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footer-content">
+      <span class="footer-logo text-gradient font-heading">PK</span>
+      <p class="footer-text">© 2024 Pavan Kumar Reddy. All rights reserved.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/ypavan-net/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/y.pavan.kr/" target="_blank" rel="noopener" aria-label="Instagram">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        </a>
+        <a href="https://wa.me/+919148283004" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Navigation scroll effect
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile menu toggle
+    const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+    const navLinks = document.getElementById('navLinks');
+    mobileMenuBtn.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+
+    // Close mobile menu on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+      });
+    });
+  </script>
+</body>
+</html>
