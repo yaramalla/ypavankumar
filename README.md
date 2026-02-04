@@ -1,4 +1,4 @@
-# Welcome to your Lovable project
+# Welcome to your Lovable project (Angular)
 
 ## Project info
 
@@ -33,7 +33,7 @@ cd <YOUR_PROJECT_NAME>
 npm i
 
 # Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
+npm start
 ```
 
 **Edit a file directly in GitHub**
@@ -54,10 +54,8 @@ npm run dev
 
 This project is built with:
 
-- Vite
+- Angular
 - TypeScript
-- React
-- shadcn-ui
 - Tailwind CSS
 
 ## How can I deploy this project?
